@@ -1,16 +1,16 @@
 /**
  * TODO Прудполагается, что sales.length >= 3
  */
-    public class SalesManager {
-    protected int[] sales;
+public class SalesManager {
+    protected long[] sales;
 
-    public SalesManager(int[] sales) {
+    public SalesManager(long[] sales) {
         this.sales = sales;
     }
 
-    public int max() {
-        int max = -1;
-        for (int sale : sales) {
+    public long max() {
+        long max = -1;
+        for (long sale : sales) {
             if (sale > max) {
                 max = sale;
             }
@@ -19,16 +19,16 @@
     }
     public int trimmedMean() {
         int max = -1, tm, sum = 0;
-        for (int sale : sales) {
+        for (long sale : sales) {
             if (sale > max) {
-                max = sale;
+                max = (int) sale;
             }
             sum += sale;
         }
         int min = max;
-        for (int sale : sales) {
+        for (long sale : sales) {
             if (sale < min) {
-                min = sale;
+                min = (int) sale;
             }
         }
         tm = (sum - (min + max))/ (sales.length - 2);
