@@ -17,15 +17,15 @@ public class SalesManager {
         }
         return max;
     }
-    public int trimmedMean() {
-        int max = -1, tm, sum = 0;
+    public long trimmedMean() {
+        long max = -1, tm, sum = 0;
         for (long sale : sales) {
             if (sale > max) {
-                max = (int) sale;
+                max = sale;
             }
             sum += sale;
         }
-        int min = max;
+        long min = max;
         for (long sale : sales) {
             if (sale < min) {
                 min = (int) sale;
